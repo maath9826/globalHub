@@ -1,0 +1,383 @@
+:root {
+  --primary-dark-x2: #271c50;
+  --primary-dark: #33256d;
+  --primary-normal: #4d38a0;
+  --primary-light: #a58fe9;
+
+  --secondary-normal: #ff8405;
+  --secondary-light: #ffaf40;
+
+  --p-light: #7d7796;
+
+  --page-bg: #f9f9fa;
+
+  --disabled: #bebbcb;
+
+  --page-padding: 80px 267px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: "touche";
+}
+
+html,
+body {
+  background-color: var(--page-bg);
+}
+
+p {
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: "touche";
+  font-weight: normal;
+  src: url("./assets/fonts/Touche-Regular.ttf");
+}
+
+@font-face {
+  font-family: "touche";
+  font-weight: bold;
+  src: url("./assets/fonts/Touche-Bold.ttf");
+}
+
+@font-face {
+  font-family: "touche";
+  font-weight: 500;
+  src: url("./assets/fonts/Touche-Semibold.ttf");
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--primary-light);
+  -webkit-background-clip: text !important;
+}
+
+/*************** overiding bootstrap ***************/
+
+.btn-primary {
+  --bs-btn-color: var(--primary-dark);
+  --bs-btn-bg: var(--primary-light);
+  --bs-btn-border-color: var(--primary-light);
+  --bs-btn-hover-color: var(--primary-dark);
+  --bs-btn-hover-bg: var(--primary-normal);
+  --bs-btn-hover-border-color: var(--primary-normal);
+  --bs-btn-focus-shadow-rgb: 165, 143, 233;
+  --bs-btn-active-color: var(--primary-dark);
+  --bs-btn-active-bg: var(--primary-normal);
+  --bs-btn-active-border-color: var(--primary-normal);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--primary-dark);
+  --bs-btn-disabled-bg: var(--primary-light);
+  --bs-btn-disabled-border-color: var(--primary-light);
+}
+
+.btn-secondary {
+  background-image: linear-gradient(
+    to right,
+    var(--secondary-normal),
+    var(--secondary-light)
+  );
+  padding: 15px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 0;
+}
+
+.col,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  padding: 0;
+}
+
+.row {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+/**** form-control ****/
+
+.form-control,
+.form-control:focus {
+  border-radius: 5px;
+  border: solid 1px var(--primary-light);
+  color: var(--primary-light);
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 2%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 5px rgba(165, 143, 233, 50%);
+}
+
+.form-control::placeholder {
+  color: var(--primary-light);
+  font-size: 14px;
+}
+
+/**** dropdown ****/
+
+.dropdown-toggle,
+.dropdown-toggle:focus,
+.dropdown-toggle:hover {
+  border-radius: 5px;
+  border: solid 1px var(--primary-light);
+  color: var(--primary-light);
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 2%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  background-color: var(--primary-light);
+  width: 100%;
+}
+
+.dropdown-menu .dropdown-item {
+  cursor: pointer;
+  color: var(--primary-dark);
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: white;
+  background-color: var(--primary-dark);
+}
+
+/**** select-input ****/
+
+.select-input,
+.select-input:focus,
+.select-input:hover {
+  border-radius: 5px;
+  border: solid 1px var(--primary-light);
+  color: var(--primary-light);
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 2%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 0;
+  padding: 10px 12px;
+  height: 43px;
+  text-indent: 20px;
+}
+
+/* .dropdown-menu {
+  background-color: var(--primary-light);
+  width: 100%;
+} */
+
+/* .option {
+  background-color: var(--primary-light);
+  cursor: pointer;
+  color: var(--primary-dark);
+}
+
+.option:hover,
+.option:focus {
+  color: white;
+  background-color: var(--primary-dark);
+} */
+
+/**** checkbox ****/
+
+.form-check-label {
+  font-size: 14px;
+  color: var(--primary-light);
+}
+
+.form-check-input,
+.form-check-input:focus,
+.form-check-input:checked {
+  border-radius: 2px;
+  border: solid 1px var(--primary-light);
+  background-color: rgba(255, 255, 255, 2%);
+  width: 18px;
+  height: 18px;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(165, 143, 233, 50%);
+}
+
+.form-check-input:checked[type="checkbox"] {
+  background-image: url(./assets/images/bi_check.svg);
+  background-size: auto;
+}
+
+/*************** header ***************/
+
+header {
+  padding: var(--page-padding);
+  padding-bottom: 0;
+  background-image: url("./assets/images/world-connected.png"),
+    radial-gradient(var(--primary-dark) 0%, var(--primary-normal) 100%);
+  border-radius: 0 0 137px 137px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 0;
+}
+
+/*************** navbar ***************/
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  position: relative;
+  z-index: 1;
+}
+
+header nav .navbar-titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex: 1;
+  color: var(--primary-light);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+header nav .track-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  border-radius: 5px;
+}
+
+/*************** footer ***************/
+
+footer {
+  padding: var(--page-padding);
+  background-image: url("./assets/images/world-connected.png"),
+    radial-gradient(circle, var(--primary-dark) 0%, var(--primary-normal) 100%);
+  border-radius: 137px 137px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .column {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+footer .column:first-child {
+  gap: 40px;
+}
+
+footer .column .social-medias {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .column .social-medias .social-media {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: var(--primary-light);
+  border-radius: 5px;
+}
+
+footer .column .social-medias .social-media:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+footer .column:not(:first-child) {
+  gap: 20px;
+  color: var(--primary-light);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+footer .column .title {
+  color: white;
+  font-size: 16px;
+}
+
+/*************** responsive ***************/
+
+@media only screen and (max-width: 1380px) {
+  /* For mobile phones: */
+  :root {
+    --page-padding: 80px 180px;
+  }
+}

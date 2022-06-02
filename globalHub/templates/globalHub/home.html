@@ -1,0 +1,26 @@
+{% extends "globalHub/layout.html" %} 
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'globalHub/home.css' %}" />
+{% endblock css %}
+
+{% block banner %}
+  {% include 'globalHub/components/home/banner.html'%}
+{% endblock banner %}
+
+{% block body %}
+
+  {% include 'globalHub/components/home/services.html'%}  
+  {% include 'globalHub/components/home/request-quote.html'%}
+  {% include 'globalHub/components/home/why-us.html'%}
+  {% include 'globalHub/components/home/our-happy-customers.html'%}
+
+  {% block script %}
+    <script src="{% static 'globalHub/js/home.js' %}"></script>
+  {% endblock script %}
+{% endblock body %}
+
+
+
+

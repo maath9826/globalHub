@@ -1,0 +1,26 @@
+#about {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#about > .title {
+  display: flex;
+}
+
+#about > .title span {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#about > .title span span {
+  color: var(--secondary-light);
+}
+
+#about p {
+  color: var(--p-light);
+  font-size: 14px;
+  line-height: 160%;
+}

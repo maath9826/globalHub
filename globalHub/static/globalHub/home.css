@@ -1,0 +1,442 @@
+/*************** banner ***************/
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 80px;
+}
+
+#banner .body {
+  display: flex;
+  justify-content: space-between;
+}
+
+#banner .body .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 280px;
+}
+
+#banner .body .content .title {
+  display: flex;
+  flex-direction: column;
+  line-height: initial;
+}
+
+#banner .body .content .title span {
+  color: white;
+}
+
+#banner .body .content p {
+  font-size: 14px;
+  color: var(--primary-light);
+}
+
+#banner .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--primary-normal);
+  padding-top: 10px;
+}
+
+#banner .footer .social-medias,
+#banner .footer .contacts {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#banner .footer .social-medias .social-media {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: var(--primary-light);
+  border-radius: 5px;
+}
+
+#banner .footer .social-medias .social-media:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+#banner .footer .contacts .contact-container .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: var(--primary-light);
+  border-radius: 50px;
+}
+
+#banner .footer .contacts .contact-container .value {
+  color: var(--secondary-normal);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#banner .footer .contacts .contact-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/*************** services ***************/
+
+#services {
+  display: flex;
+  flex-direction: column;
+  padding: var(--page-padding);
+  gap: 50px;
+}
+
+#services .title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: initial;
+}
+
+#services .title span:first-child {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#services .title span:last-child {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--secondary-light);
+}
+
+#services .cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: 260px;
+  height: 352px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  gap: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 5%);
+  background-position: -260px 0;
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-normal) 0%,
+    var(--primary-dark) 100%
+  );
+  transition-duration: 0.3s;
+  transition-property: background-position;
+  background-repeat: no-repeat;
+}
+
+.service-card .title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+.service-card p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--p-light);
+  line-height: 160%;
+  text-align: center;
+}
+
+.service-card button {
+  padding: 10px 20px;
+  background-color: transparent;
+  background-image: none;
+  border: solid 0.7px var(--disabled);
+  color: var(--disabled);
+}
+
+.service-card:hover {
+  background-position: 0 0;
+}
+
+.service-card:hover .title {
+  color: white;
+}
+
+.service-card:hover p {
+  color: var(--primary-light);
+}
+
+.service-card:hover button {
+  border: 0;
+  color: white;
+  background-image: linear-gradient(
+    to right,
+    var(--secondary-normal),
+    var(--secondary-light)
+  );
+}
+
+/*************** request-quote ***************/
+
+#request-quote {
+  padding: var(--page-padding);
+  background-image: radial-gradient(
+    var(--primary-dark) 0%,
+    var(--primary-normal) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#request-quote > .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#request-quote .title span {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+
+#request-quote .title span span {
+  color: var(--secondary-light);
+}
+
+#request-quote form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  background-color: rgba(165, 143, 233, 30%);
+  border-radius: 5px;
+  align-items: start;
+}
+
+#request-quote form .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+#request-quote form .section .row {
+  gap: 10px;
+}
+
+#request-quote form .section .row .col-4,
+#request-quote form .section .row .col-3 {
+  flex: 1;
+}
+
+#request-quote form .section .title {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.checkboxes-container {
+  display: flex;
+  gap: 30px;
+}
+
+#request-quote form button[type="submit"] {
+  font-size: 16px;
+  padding: 12px 40px;
+}
+
+/*************** why-us ***************/
+
+#why-us {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+#why-us > .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#why-us > .title span {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#why-us > .title span span {
+  color: var(--secondary-light);
+}
+
+#why-us > .title p {
+  font-size: 14px;
+  color: var(--primary-dark-x2);
+}
+
+#why-us .reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#why-us .reason-right,
+#why-us .reason-left {
+  display: flex;
+  align-items: center;
+}
+
+#why-us .reason-left .img-container {
+  flex: 1;
+  padding-right: 80px;
+}
+
+#why-us .reason-right .img-container {
+  flex: 1;
+  padding-left: 80px;
+}
+
+#why-us .reason .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#why-us .reason .content .id {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--primary-light);
+}
+
+#why-us .reason .content .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#why-us .reason .content .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#why-us .reason .content p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--p-light);
+  line-height: 188%;
+}
+
+/*************** our-happy-customers ***************/
+
+#our-happy-customers {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+#our-happy-customers .customers {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#our-happy-customers .customers > img {
+  cursor: pointer;
+  position: absolute;
+}
+
+#our-happy-customers .customers .prev-customer {
+  position: absolute;
+  left: -50px;
+  transform: rotate(180deg);
+}
+
+#our-happy-customers .customers .next-customer {
+  position: absolute;
+  right: -50px;
+}
+
+#our-happy-customers > .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#our-happy-customers > .title span {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#our-happy-customers > .title span span {
+  color: var(--secondary-light);
+}
+
+#our-happy-customers .customer-card {
+  width: 260px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 35px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 5%);
+  background-color: white;
+}
+
+#our-happy-customers .customer-card p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 180%;
+  color: var(--p-light);
+}
+
+#our-happy-customers .customer-card .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#our-happy-customers .customer-card .profile img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+}
+
+#our-happy-customers .customer-card .profile .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-dark-x2);
+}
+
+#our-happy-customers .customer-card .profile .job {
+  font-size: 10px;
+  color: var(--secondary-light);
+}
