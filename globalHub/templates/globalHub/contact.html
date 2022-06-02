@@ -1,0 +1,48 @@
+{% extends "globalHub/layout.html" %} 
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'globalHub/contact.css' %}" />
+{% endblock css %}
+
+{% block body %}
+  <div id="contact">
+    <div class="title">
+      <span>Send a <span>Message</span></span>
+    </div>
+    <form>
+      <div class="section">
+        <div class="row">
+          <input
+            class="form-control"
+            name="name"
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            class="form-control"
+            name="email"
+            type="email"
+            placeholder="Email"
+          />
+        </div>
+        <div class="row">
+          <input
+            class="form-control"
+            name="phoneNumber"
+            type="number"
+            placeholder="Phone Number"
+          />
+        </div>
+        <div class="row">
+          <textarea name="message" placeholder="Message" class="form-control" id="exampleFormControlTextarea1" rows="11"></textarea>
+        </div>
+      </div>
+      <button class="btn btn-secondary" type="submit">SUBMIT</button>
+    </form>
+  </div>
+{% endblock body %}
+
+
+
+

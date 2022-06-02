@@ -1,0 +1,14 @@
+{% load static %}
+
+<div id="our-happy-customers">
+  <div class="title">
+    <span> Our Happy <span>Customers</span> </span>
+  </div>
+  <div class="customers">
+    <img class="prev-customer" src="{% static 'globalHub/assets/images/ep_arrow-right.svg' %}" alt="left arrow icon">
+    {% include 'globalHub/components/cards/customer-card.html' with name="Customer Name" job="CUSTOMER JOB" imgUrl="globalHub/assets/images/customer-img1.png" %}
+    {% include 'globalHub/components/cards/customer-card.html' with name="Customer Name" job="CUSTOMER JOB" imgUrl="globalHub/assets/images/customer-img2.png" %}
+    {% include 'globalHub/components/cards/customer-card.html' with name="Customer Name" job="CUSTOMER JOB" imgUrl="globalHub/assets/images/customer-img3.png" %}
+    <img class="next-customer"  src="{% static 'globalHub/assets/images/ep_arrow-right.svg' %}" alt="left arrow icon">
+  </div>
+</div>

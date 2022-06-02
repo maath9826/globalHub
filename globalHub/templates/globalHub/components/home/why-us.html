@@ -1,0 +1,14 @@
+{% load static %}
+
+<div id="why-us">
+  <div class="title">
+    <span> Why Choose <span>Us</span> </span>
+    <p>A choice that makes the difference</p>
+  </div>
+  <div class="reasons">
+    {% include 'globalHub/components/reason-left.html' with id='01' title="SaveTime" imgUrl="globalHub/assets/images/reason-savetime.png" %}
+    {% include 'globalHub/components/reason-right.html' with id='02' title="100% Reliable" imgUrl="globalHub/assets/images/reason-reliable.png" %}
+    {% include 'globalHub/components/reason-left.html' with id='03' title="Best Pricing" imgUrl="globalHub/assets/images/reason-bestpricing.png" %}
+    {% include 'globalHub/components/reason-right.html' with id='04' title="Global Shipping" imgUrl="globalHub/assets/images/reason-globalshipping.png" %}
+  </div>
+</div>
