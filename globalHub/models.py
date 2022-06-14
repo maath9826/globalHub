@@ -9,8 +9,9 @@ class Order(models.Model):
     # subject = models.CharField(max_length=30)
     order_info = models.TextField(max_length=300)
     official_code = models.CharField(max_length=30)
-    code = models.CharField(max_length=6, unique=True)
+    code = models.CharField(max_length=6, unique=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
+    done = models.BooleanField(default=False)
 
     def __str__(self):
         return f'Order by {self.user_name} on time {self.date.strftime("%Y-%m-%d")}'

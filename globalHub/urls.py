@@ -5,6 +5,6 @@ urlpatterns = [
 
 
     # saveing forms URLS
-    path("Home/saveQuote", views.Quote_save, name="saveQuote")
+    path("Home/saveQuote", views.Quote_save, name="saveQuote"),
     path("Contact/saveContact", views.Contact_save, name="saveOrder")
 ]
