@@ -6,8 +6,9 @@ class Order(models.Model):
     user_name = models.CharField(max_length=30)
     user_phone_number = PhoneNumberField(null=False, blank=False)
     user_email = models.EmailField()
+    # subject = models.CharField(max_length=30)
     order_info = models.TextField(max_length=300)
-    oficial_code = models.CharField(max_length=10)
+    official_code = models.CharField(max_length=30)
     code = models.CharField(max_length=6, unique=True)
     date = models.DateTimeField(auto_now_add=True)
 
@@ -98,3 +99,28 @@ class Logistics_solution(models.Model):
 
     def __str__(self):
         return f'{self.name} solution'
+
+
+class Quote(models.Model):
+    name = models.TextField(max_length=30)
+    email = models.EmailField()
+    phonenumber = PhoneNumberField()
+    freightType = models.ForeignKey(Logistics_solution, on_delete=models.CASCADE)
+    departureCity = models.TextField(max_length=30)
+    deliveryCite = models.TextField(max_length=30)
+    height = models.TextField(max_length=10)
+    width = models.TextField(max_length=10)
+    length = models.TextField(max_length=10)
+    weight = models.TextField(max_length=10)
+
+    fragile = models.BooleanField()
+    expressDelivery = models.BooleanField()
+    insurance = models.BooleanField()
+    packaging = models.BooleanField()
+
+    code = models.TextField(max_length=6)
+    official_Code = models.TextField(max_length=300, unique=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Order by {self.name} on time {self.date.strftime("%Y-%m-%d")}'

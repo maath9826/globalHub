@@ -2,5 +2,9 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index')
+
+
+    # saveing forms URLS
+    path("Home/saveQuote", views.Quote_save, name="saveQuote")
+    path("Contact/saveContact", views.Contact_save, name="saveOrder")
 ]
