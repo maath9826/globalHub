@@ -215,6 +215,18 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "globalHub.Order": "fa fa-box",
+        "globalHub.Quote": "fa fa-arrow-up",
+        "globalHub.Contact_us": "fa fa-address-card",
+        "globalHub.Logistics_solution": "fa fa-dolly",
+        "globalHub.About_us": "fa fa-building",
+        "globalHub.Why_choose_us": "fa fa-question",
+        "globalHub.Offer": "fa fa-percent",
+
+        "globalHub.Branch": "fa fa-code-branch",
+        "globalHub.Feedback": "fa fa-comments",
+        "globalHub.Service": "fa fa-handshake",
+
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
