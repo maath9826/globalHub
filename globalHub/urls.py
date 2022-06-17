@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path
 
 from . import views
@@ -10,4 +11,6 @@ urlpatterns = [
     path('services',views.services, name='services'),
     path('about',views.about, name='about'),
     path('offers',views.offers, name='offers'),
+    path("Home/saveQuote", views.Quote_save, name="saveQuote"),
+    path("Contact/saveContact", views.Contact_save, name="saveOrder")
 ]
