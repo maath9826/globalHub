@@ -1,11 +1,8 @@
 {% load static %}
 
 <div class="service-card">
-  <img src="{% static imgUrl %}" alt="airplane" />
+  <img src="{% static iconUrl %}" />
   <span class="title">{{title}}</span>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vehicula enim
-    ultrices vitae arcu quam ullamcorper erat viverra. Nec sem quis n...
-  </p>
+  <p>{{content|slice:145}} {% if content|length > 145 %} ... {% endif %}</p>
   <button class="btn btn-secondary">READ MORE</button>
 </div>

@@ -10,8 +10,7 @@
 {% endblock banner %}
 
 {% block body %}
-
-  {% include 'globalHub/components/home/services.html'%}  
+  {% include 'globalHub/components/home/services.html' with services=services %}  
   {% include 'globalHub/components/home/request-quote.html'%}
   {% include 'globalHub/components/home/why-us.html'%}
   {% include 'globalHub/components/home/our-happy-customers.html'%}

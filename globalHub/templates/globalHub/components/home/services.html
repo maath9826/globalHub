@@ -10,12 +10,16 @@
       </span>
     </div>
     <div class="cards">
-      {% include 'globalHub/components/cards/service-card.html' with title="Air Freight" imgUrl="globalHub/assets/images/Aireplane.svg" %}
-      {% include 'globalHub/components/cards/service-card.html' with title="Ocean Freight" imgUrl="globalHub/assets/images/ship.svg" %}
-      {% include 'globalHub/components/cards/service-card.html' with title="Road Freight" imgUrl="globalHub/assets/images/Truck.svg" %}
-      {% include 'globalHub/components/cards/service-card.html' with title="Clearance" imgUrl="globalHub/assets/images/Form.svg" %}
-      {% include 'globalHub/components/cards/service-card.html' with title="Post Courier" imgUrl="globalHub/assets/images/material-symbols_local-post-office-outline.svg" %}
-      {% include 'globalHub/components/cards/service-card.html' with title="Domestic" imgUrl="globalHub/assets/images/departure.svg" %}
-      {% include 'globalHub/components/cards/service-card.html' with title="Storage" imgUrl="globalHub/assets/images/warehouse.svg" %}
+      {% for service in services %}
+        {% include 'globalHub/components/cards/service-card.html' with title=service.name_of_service iconUrl=service.icon_url content=service.description_of_service %}
+      {% endfor %}
+      
+      {% comment %} {% include 'globalHub/components/cards/service-card.html' with title="Air Freight" imgUrl="globalHub/assets/images/Aireplane.svg" content="" %}
+      {% include 'globalHub/components/cards/service-card.html' with title="Ocean Freight" imgUrl="globalHub/assets/images/ship.svg" content="" %}
+      {% include 'globalHub/components/cards/service-card.html' with title="Road Freight" imgUrl="globalHub/assets/images/Truck.svg" content="" %}
+      {% include 'globalHub/components/cards/service-card.html' with title="Clearance" imgUrl="globalHub/assets/images/Form.svg" content="" %}
+      {% include 'globalHub/components/cards/service-card.html' with title="Post Courier" imgUrl="globalHub/assets/images/material-symbols_local-post-office-outline.svg" content="" %}
+      {% include 'globalHub/components/cards/service-card.html' with title="Domestic" imgUrl="globalHub/assets/images/departure.svg" content="" %}
+      {% include 'globalHub/components/cards/service-card.html' with title="Storage" imgUrl="globalHub/assets/images/warehouse.svg" content="" %} {% endcomment %}
     </div>
   </div>

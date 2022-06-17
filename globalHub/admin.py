@@ -61,7 +61,9 @@ class Service_view(admin.ModelAdmin):
     fields = [
         'name_of_service',
         'description_of_service',
-        'image_for_service',
+        'image_url',
+        'icon_url',
+        # 'image_for_service',
     ]
     list_display = ("name_of_service", "description_of_service")
 

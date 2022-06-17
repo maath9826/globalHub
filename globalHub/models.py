@@ -34,9 +34,11 @@ class Order(models.Model):
 
 
 class Service(models.Model):
-    name_of_service = models.CharField(max_length=30)
-    description_of_service = models.TextField(max_length=300)
-    image_for_service = models.ImageField()
+    name_of_service = models.CharField(max_length=40)
+    description_of_service = models.TextField()
+    icon_url = models.TextField(default='globalHub/assets/images/Aireplane.svg')
+    image_url = models.TextField(default='globalHub/assets/images/Aireplane.svg')
+    # image_for_service = models.ImageField()
 
     def __str__(self):
         return f'{self.name_of_service} service'

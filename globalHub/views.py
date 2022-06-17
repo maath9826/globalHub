@@ -1,11 +1,13 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
-from .models import Quote, Order
+from .models import Quote, Order, Service
 from django.utils.crypto import get_random_string
 import string
 
 def home(request):
-    context={}
+    context={
+        "services": Service.objects.all()
+    }
     return render(request, "globalHub/home.html",context)
 
 def contact(request):
