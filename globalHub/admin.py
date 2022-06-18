@@ -102,7 +102,10 @@ class Contact_view(admin.ModelAdmin):
     model = Contact_us
     fields = [
         'email',
-        'phone_number'
+        'phone_number',
+        'facebook_url',
+        'instagram_url',
+        'telegram_url',
     ]
     list_display = ("email", 'phone_number')
 

@@ -6,7 +6,35 @@
 {% endblock css %}
 
 {% block body %}
-  {% comment %} write your code here {% endcomment %}
+  <div id="services_page">
+    <div class="side_navbar">
+      {% for service in services %}
+        <a class="nav_item nav_item{{forloop.counter0}}"> 
+          {{service.name_of_service}}
+        </a>
+      {% endfor %}
+
+    </div>
+    <div class="spacer"></div>
+    <div class="services">
+      {% for service in services %}
+        <div class="service service{{forloop.counter0}}">
+          <span class="title">
+            {{service.name_of_service}}
+          </span>
+          <p>
+            {{service.description_of_service}}
+          </p>
+          <img src="{% static service.image_url %}">
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  {% block script %}
+    <script src="{% static 'globalHub/js/services.js' %}"></script>
+  {% endblock script %}
 {% endblock body %}
 
 

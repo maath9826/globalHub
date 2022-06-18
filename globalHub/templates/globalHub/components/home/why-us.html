@@ -6,9 +6,19 @@
     <p>A choice that makes the difference</p>
   </div>
   <div class="reasons">
-    {% include 'globalHub/components/reason-left.html' with id='01' title="SaveTime" imgUrl="globalHub/assets/images/reason-savetime.png" %}
-    {% include 'globalHub/components/reason-right.html' with id='02' title="100% Reliable" imgUrl="globalHub/assets/images/reason-reliable.png" %}
-    {% include 'globalHub/components/reason-left.html' with id='03' title="Best Pricing" imgUrl="globalHub/assets/images/reason-bestpricing.png" %}
-    {% include 'globalHub/components/reason-right.html' with id='04' title="Global Shipping" imgUrl="globalHub/assets/images/reason-globalshipping.png" %}
+    {% for reason in reasons %}
+      {% if forloop.counter|divisibleby:2 %}
+        {% include 'globalHub/components/reason-right.html' with id=forloop.counter title=reason.title image_url=reason.image_url content=reason.descriptions %}
+      {% else %}
+        {% include 'globalHub/components/reason-left.html' with id=forloop.counter title=reason.title image_url=reason.image_url content=reason.descriptions %}
+      {% endif %}
+      
+
+
+      {% comment %} {% include 'globalHub/components/reason-left.html' with id='01' title="SaveTime" imgUrl="globalHub/assets/images/reason-savetime.png" %}
+      {% include 'globalHub/components/reason-right.html' with id='02' title="100% Reliable" imgUrl="globalHub/assets/images/reason-reliable.png" %}
+      {% include 'globalHub/components/reason-left.html' with id='03' title="Best Pricing" imgUrl="globalHub/assets/images/reason-bestpricing.png" %}
+      {% include 'globalHub/components/reason-right.html' with id='04' title="Global Shipping" imgUrl="globalHub/assets/images/reason-globalshipping.png" %} {% endcomment %}
+    {% endfor %}
   </div>
 </div>

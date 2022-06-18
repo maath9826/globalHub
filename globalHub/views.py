@@ -1,12 +1,13 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
-from .models import Quote, Order, Service
+from .models import About_us, Contact_us, Quote, Order, Service, Why_choose_us
 from django.utils.crypto import get_random_string
 import string
 
 def home(request):
     context={
-        "services": Service.objects.all()
+        "services": Service.objects.all(),
+        "reasons": Why_choose_us.objects.all(),
     }
     return render(request, "globalHub/home.html",context)
 
@@ -15,11 +16,15 @@ def contact(request):
     return render(request, "globalHub/contact.html",context)
 
 def about(request):
-    context={}
+    context={
+        "content": About_us.objects.last().text
+    }
     return render(request, "globalHub/about.html",context)
 
 def services(request):
-    context={}
+    context={
+        "services": Service.objects.all(),
+    }
     return render(request, "globalHub/services.html",context)
 
 def offers(request):

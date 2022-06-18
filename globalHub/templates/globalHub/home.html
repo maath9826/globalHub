@@ -1,4 +1,4 @@
-{% extends "globalHub/layout.html" %} 
+{% extends "globalHub/layout.html"%} 
 {% load static %}
 
 {% block css %}
@@ -12,8 +12,8 @@
 {% block body %}
   {% include 'globalHub/components/home/services.html' with services=services %}  
   {% include 'globalHub/components/home/request-quote.html'%}
-  {% include 'globalHub/components/home/why-us.html'%}
-  {% include 'globalHub/components/home/our-happy-customers.html'%}
+  {% include 'globalHub/components/home/why-us.html' with reasons=reasons %}
+  {% comment %} {% include 'globalHub/components/home/our-happy-customers.html'%} {% endcomment %}
 
   {% block script %}
     <script src="{% static 'globalHub/js/home.js' %}"></script>

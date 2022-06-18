@@ -28,7 +28,7 @@
             alt="phone"
           />
         </div>
-        <span class="value"> +9647705566777 </span>
+        <span class="value"> {{contact_info.phone_number}} </span>
       </div>
       <div class="contact-container">
         <div class="contact">
@@ -37,27 +37,33 @@
             alt="email"
           />
         </div>
-        <span class="value"> yazen@globalhub.com </span>
+        <span class="value"> {{contact_info.email}} </span>
       </div>
     </div>
     <div class="social-medias">
       <div class="social-media">
-        <img
-          src="{% static 'globalHub/assets/images/facebook.svg' %}"
-          alt="facebook"
-        />
+        <a href="{{contact_info.facebook_url}}">
+          <img
+            src="{% static 'globalHub/assets/images/facebook.svg' %}"
+            alt="facebook"
+          />
+        </a>
       </div>
       <div class="social-media">
-        <img
-          src="{% static 'globalHub/assets/images/cib_telegram-plane.svg' %}"
-          alt="telegram"
-        />
+        <a href="{{contact_info.telegram_url}}">
+          <img
+            src="{% static 'globalHub/assets/images/cib_telegram-plane.svg' %}"
+            alt="telegram"
+          />
+        </a>
       </div>
       <div class="social-media">
-        <img
-          src="{% static 'globalHub/assets/images/ant-design_instagram-filled.svg' %}"
-          alt="telegram"
-        />
+        <a href="{{contact_info.instagram_url}}">
+          <img
+            src="{% static 'globalHub/assets/images/ant-design_instagram-filled.svg' %}"
+            alt="telegram"
+          />
+        </a>
       </div>
     </div>
   </div>

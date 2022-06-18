@@ -64,9 +64,10 @@ class Feedback(models.Model):
 
 
 class Why_choose_us(models.Model):
-    title = models.CharField(max_length=30)
-    descriptions = models.TextField(max_length=300)
-    image = models.ImageField()
+    title = models.CharField(max_length=60)
+    descriptions = models.TextField()
+    image_url = models.TextField(default="globalHub/assets/images/reason-savetime.png")
+    # image = models.ImageField()
 
     def __str__(self):
         return f'{self.title} (why choose us)'
@@ -75,13 +76,16 @@ class Why_choose_us(models.Model):
 class Contact_us(models.Model):
     email = models.EmailField()
     phone_number = PhoneNumberField()
+    facebook_url = models.TextField(default="")
+    instagram_url = models.TextField(default="")
+    telegram_url = models.TextField(default="")
 
     def __str__(self):
         return f'Email: {self.email}\nPhone number: {self.phone_number}'
 
 
 class About_us(models.Model):
-    text = models.TextField(max_length=500)
+    text = models.TextField()
 
 
 class Logistics_solution(models.Model):
