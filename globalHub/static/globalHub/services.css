@@ -1,0 +1,86 @@
+#services {
+padding: var(--page-padding); 
+display: flex;
+/* flex-direction: column; */
+gap: 15px;  
+background-image: url("./assets/images/world-connected.png");
+background-repeat: no-repeat;
+
+}
+ 
+
+#services .sidenav {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px 0px 0px 10px;
+width: 50%;
+gap: 10px;
+position: fixed;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 160%;
+color: #BEBBCB;
+font-family: "touche";
+font-weight: normal;
+src: url("./assets/fonts/Touche-Regular.ttf"); 
+ 
+}
+
+#services .sidenav a:hover{
+color: #FFAF40;
+ 
+}
+#services .column{
+  height: 200px; 
+  border-left: 0.5px solid #BEBBCB;
+  
+  width: 200px; 
+   
+}
+ 
+
+#services .main{ 
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+     */
+ width: 70%;
+     
+ 
+}
+
+.main span {
+ 
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+color: #33256D;
+font-family: "touche";
+src: url("./assets/fonts/Touche-Regular.ttf");
+}
+
+
+.main  p {
+ 
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+color: #7D7796;
+padding: 15px 0px;
+font-family: "touche";
+text-align: justify;
+font-weight: normal;
+src: url("./assets/fonts/Touche-Regular.ttf");
+
+ 
+}
+
+.main  img {
+width: 553px;
+height: 424px;
+padding-bottom: 80px; 
+  
+}
