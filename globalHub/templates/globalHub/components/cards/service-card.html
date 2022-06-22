@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="service-card">
+<a class="service-card" href="{% url 'services_parameter' number%}">
   <img src="{% static iconUrl %}" />
   <span class="title">{{title}}</span>
   <p>
@@ -8,4 +8,4 @@
     {% if content|length > 145 %} ... {% endif %}
   </p>
   <button class="btn btn-secondary">READ MORE</button>
-</div>
+</a>

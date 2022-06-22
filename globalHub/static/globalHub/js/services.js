@@ -1,12 +1,18 @@
 var nav_items = document.querySelectorAll(".nav_item");
 var services = document.querySelectorAll(".service .title");
 var serviceTitles = document.querySelectorAll(".service .title");
+var destination_service = document.querySelector("#destination_service");
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  if (destination_service) {
+    destination_service.scrollIntoView({ behavior: "smooth" });
+  }
+});
 
 for (let i = 0; i < nav_items.length; i++) {
   nav_items[i].addEventListener(
     "click",
     (e) => {
-      console.log("navigateToService");
       services[i].scrollIntoView({ behavior: "smooth" });
     },
     false
@@ -39,8 +45,3 @@ function isInViewport(element) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
-
-// function navigateToService(e, el) {
-//   console.log("navigateToService");
-//   el.scrollIntoView({ behavior: "smooth" });
-// }

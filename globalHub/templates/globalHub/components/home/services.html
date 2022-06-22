@@ -11,7 +11,7 @@
     </div>
     <div class="cards">
       {% for service in services %}
-        {% include 'globalHub/components/cards/service-card.html' with title=service.name_of_service iconUrl=service.icon_url content=service.description_of_service %}
+        {% include 'globalHub/components/cards/service-card.html' with number=forloop.counter0 title=service.name_of_service iconUrl=service.icon_url content=service.description_of_service %}
       {% endfor %}
     </div>
   </div>

@@ -1,0 +1,32 @@
+{% load static %}
+
+{% url 'home' as home_url%}
+{% url 'services' as services_url%}
+{% url 'about' as about_url%}
+{% url 'contact' as contact_url%}
+
+<nav class="mobile-navbar">
+    <img
+      src="{% static 'globalHub/assets/images/logo.svg' %}"
+      alt="logo"
+      class="logo"
+    />
+    <button class="btn btn-primary">Track Shipment</button>
+
+    <div class="navbar-titles">
+      <a
+        href="{{home_url}}"
+        class="{% if home_url == request.path %}current_page{% endif %}"
+        >HOME</a
+      >
+      <a href="{{services_url}}"
+      class="{% if services_url == request.path %}current_page{% endif %}"
+      >SERVICES</a>
+      <a href="{{about_url}}"
+      class="{% if about_url == request.path %}current_page{% endif %}"
+      >ABOUT</a>
+      <a href="{{contact_url}}"
+      class="{% if contact_url == request.path %}current_page{% endif %}"
+      >CONTACT</a>
+    </div>
+  </nav>

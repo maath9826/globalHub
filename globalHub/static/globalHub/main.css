@@ -287,6 +287,10 @@ header {
 
 /*************** navbar ***************/
 
+.mobile-navbar {
+  display: none;
+}
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -384,8 +388,32 @@ footer .column .title {
 /*************** responsive ***************/
 
 @media only screen and (max-width: 1380px) {
-  /* For mobile phones: */
   :root {
     --page-padding: 80px 180px;
+  }
+}
+
+/*********** mobile **********/
+
+@media only screen and (max-width: 500px) {
+  :root {
+    --page-padding: 20px 20px;
+  }
+
+  .desktop-navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0 50px 0;
+  }
+
+  header nav .navbar-titles {
+    flex-direction: column;
+    gap: 10px;
   }
 }

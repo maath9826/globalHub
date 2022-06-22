@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from .models import About_us, Contact_us, Quote, Order, Service, Why_choose_us
@@ -24,6 +25,13 @@ def about(request):
 def services(request):
     context={
         "services": Service.objects.all(),
+    }
+    return render(request, "globalHub/services.html",context)
+
+def services_parameter(request, number):
+    context={
+        "services": Service.objects.all(),
+        "number": number
     }
     return render(request, "globalHub/services.html",context)
 

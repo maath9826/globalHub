@@ -18,7 +18,7 @@
     <div class="spacer"></div>
     <div class="services">
       {% for service in services %}
-        <div class="service service{{forloop.counter0}}">
+        <div class="service service{{forloop.counter0}}" {% if number == forloop.counter0 %} id="destination_service" {% endif %}>
           <span class="title">
             {{service.name_of_service}}
           </span>

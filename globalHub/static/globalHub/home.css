@@ -184,7 +184,7 @@
 }
 
 .service-card:hover button {
-  border: 0;
+  border-color: transparent;
   color: white;
   background-image: linear-gradient(
     to right,
@@ -439,4 +439,18 @@
 #our-happy-customers .customer-card .profile .job {
   font-size: 10px;
   color: var(--secondary-light);
+}
+
+/*************** responsive ****************/
+
+/*********** mobile **********/
+
+@media only screen and (max-width: 500px) {
+  #banner {
+    display: none;
+  }
+
+  #services .title span {
+    text-align: center;
+  }
 }

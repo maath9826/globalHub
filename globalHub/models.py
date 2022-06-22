@@ -38,6 +38,7 @@ class Service(models.Model):
     description_of_service = models.TextField()
     icon_url = models.TextField(default='globalHub/assets/images/Aireplane.svg')
     image_url = models.TextField(default='globalHub/assets/images/Aireplane.svg')
+    # tempelate_class = models.TextField(default='')
     # image_for_service = models.ImageField()
 
     def __str__(self):
