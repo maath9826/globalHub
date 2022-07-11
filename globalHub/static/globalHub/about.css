@@ -24,3 +24,16 @@
   font-size: 14px;
   line-height: 160%;
 }
+
+/******* responsive ********/
+
+@media only screen and (max-width: 500px) {
+  #about > .title {
+    display: flex;
+    justify-content: center;
+  }
+
+  #about p {
+    text-align: justify;
+  }
+}

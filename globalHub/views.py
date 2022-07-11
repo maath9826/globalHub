@@ -1,14 +1,18 @@
 from asyncio.windows_events import NULL
+import json
 from django.core.mail import send_mail
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
-from .models import About_us, Contact_us, Quote, Order, Service, Why_choose_us
+from .models import About_us, Contact, Contact_us, Frieght_Type, Quote, Order, Service, Why_choose_us
 from django.utils.crypto import get_random_string
+from django.views.decorators.csrf import csrf_exempt
 import string
 
 def home(request):
     context={
         "services": Service.objects.all(),
         "reasons": Why_choose_us.objects.all(),
+        "freightTypes": Frieght_Type.objects.all(),
     }
     return render(request, "globalHub/home.html",context)
 
@@ -48,55 +52,46 @@ def send_message(request, sender, recipient, subject, content):
         fail_silently=False,
     )
 
-
-def Quote_save(request):
-    name = request.POST.get('name')
-    email = request.POST.get('email')
-    phoneNumber = request.POST.get("phoneNumber")
-    # Add id or name for Freight Type in Html
-    City_of_Departure = request.POST.get("departureCity")
-    Delivery_City = request.POST.get("deliveryCity")
-    height = request.POST.get("height")
-    width = request.POST.get("width")
-    length = request.POST.get("length")
-    weight = request.POST.get("weight")
-    # Add a unique name or ID for the last Booleans
+@csrf_exempt
+def create_quote(request):
+    data = json.loads(request.body)
 
     obj = Quote.objects.create(
-        name=name,
-        email=email,
-        phonenumber=phoneNumber,
-        # freightType=,
-        departureCity=City_of_Departure,
-        deliveryCite=Delivery_City,
-        height=height,
-        width=width,
-        length=length,
-        weight=weight,
-        # fragile=,
-        # expressDelivery=,
-        # insurance=,
-        # packaging=,
+        name = data['name'],
+        email =data ['email'],
+        phonenumber = data['phoneNumber'],
+        freightType = Frieght_Type.objects.get(id=data['freightType']),
+        departureCity = data['departureCity'],
+        deliveryCite = data['deliveryCity'],
+        height = data['height'],
+        width = data['width'],
+        length = data['length'],
+        weight = data['weight'],
+        fragile = data['fragile'],
+        expressDelivery = data['expressDelivery'],
+        insurance = data['insurance'],
+        packaging = data['packaging'],
     )
-    code = get_random_string(6, allowed_chars=string.ascii_uppercase + string.digits)
-    obj.code = code
+
+    # code = get_random_string(6, allowed_chars=string.ascii_uppercase + string.digits)
+    # obj.code = code
+
     obj.save()
-    # Add redirect after marge
 
+    return JsonResponse({},status=200)
 
-def Contact_save(request):
-    name = request.POST.get("name")
-    email = request.POST.get("email")
-    phoneNumber = request.POST.get("phoneNumber")
-    message = request.POST.get("message")
+@csrf_exempt
+def create_contact(request):
+    data = json.loads(request.body)
 
-    obj = Order.objects.create(
-        user_name=name,
-        user_email=email,
-        user_phone_number=phoneNumber,
-        order_info=message,
+    obj = Contact.objects.create(
+        name = data["name"],
+        email = data["email"],
+        phone_number = data["phoneNumber"],
+        message = data["message"],
     )
-    code = get_random_string(6, allowed_chars=string.ascii_uppercase + string.digits)
-    obj.code = code
+    # code = get_random_string(6, allowed_chars=string.ascii_uppercase + string.digits)
+    # obj.code = code
     obj.save()
+    return JsonResponse({},status=200)
 

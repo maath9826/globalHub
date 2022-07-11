@@ -1,0 +1,65 @@
+{% load static %}
+
+{% url 'home' as home_url%}
+{% url 'services' as services_url%}
+{% url 'about' as about_url%}
+{% url 'contact' as contact_url%}
+
+<footer>
+  <div class="column">
+    <img
+      src="{% static 'globalHub/assets/images/logo.svg' %}"
+      alt="logo"
+      class="logo"
+    />
+    <div class="social-medias">
+      <div class="social-media">
+        <a href="{{contact_info.facebook_url}}">
+          <img
+            src="{% static 'globalHub/assets/images/facebook.svg' %}"
+            alt="facebook"
+          />
+        </a>
+      </div>
+      <div class="social-media">
+        <a href="{{contact_info.telegram_url}}">
+          <img
+            src="{% static 'globalHub/assets/images/cib_telegram-plane.svg' %}"
+            alt="telegram"
+          />
+        </a>
+      </div>
+      <div class="social-media">
+        <a href="{{contact_info.instagram_url}}">
+          <img
+            src="{% static 'globalHub/assets/images/ant-design_instagram-filled.svg' %}"
+            alt="telegram"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <span class="title">COMPANY</span>
+    <a
+      href="{{contact_url}}"
+      class="{% if contact_url == request.path %}current_page{% endif %}"
+      >CONTACT</a
+    >
+    <a
+      href="{{services_url}}"
+      class="{% if services_url == request.path %}current_page{% endif %}"
+      >SERVICES</a
+    >
+    <a
+      href="{{about_url}}"
+      class="{% if about_url == request.path %}current_page{% endif %}"
+      >ABOUT</a
+    >
+  </div>
+  <div class="column">
+    <span class="title">GET IN TOUCH</span>
+    <span href="CONTACT">{{contact_info.phone_number}}</span>
+    <span href="SERVICES">{{contact_info.email}}</span>
+  </div>
+</footer>

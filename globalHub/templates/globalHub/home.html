@@ -11,12 +11,12 @@
 
 {% block body %}
   {% include 'globalHub/components/home/services.html' with services=services %}  
-  {% include 'globalHub/components/home/request-quote.html'%}
+  {% include 'globalHub/components/home/request-quote.html' with freightTypes=freightTypes%}
   {% include 'globalHub/components/home/why-us.html' with reasons=reasons %}
   {% comment %} {% include 'globalHub/components/home/our-happy-customers.html'%} {% endcomment %}
 
   {% block script %}
-    <script src="{% static 'globalHub/js/home.js' %}"></script>
+    <script type="module" src="{% static 'globalHub/js/home.js' %}"></script>
   {% endblock script %}
 {% endblock body %}
 

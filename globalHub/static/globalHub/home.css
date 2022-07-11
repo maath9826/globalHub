@@ -453,4 +453,55 @@
   #services .title span {
     text-align: center;
   }
+
+  /**** request-quote ***/
+
+  #request-quote form .section > .row {
+    flex-direction: column;
+  }
+
+  #request-quote form .section .row .col-4,
+  #request-quote form .section .row .col-3 {
+    width: 100%;
+  }
+
+  #request-quote form .section > .checkboxes-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #request-quote form {
+    align-items: center;
+  }
+
+  /**** why-us ****/
+  #why-us {
+    gap: 20px;
+  }
+
+  #why-us .reasons {
+    text-align: center;
+  }
+
+  #why-us .reason-right,
+  #why-us .reason-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #why-us .reason-left {
+    flex-direction: column-reverse;
+  }
+
+  #why-us .reason-left .img-container,
+  #why-us .reason-right .img-container {
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #why-us .reason-left .img-container img,
+  #why-us .reason-right .img-container img {
+    width: 250px;
+  }
 }

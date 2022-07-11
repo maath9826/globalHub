@@ -24,8 +24,8 @@ class Order(models.Model):
     user_phone_number = PhoneNumberField(null=False, blank=False)
     user_email = models.EmailField()
     order_info = models.TextField(max_length=300)
-    official_code = models.CharField(max_length=30)
-    code = models.CharField(max_length=6, unique=True, null=True)
+    # official_code = models.CharField(max_length=30)
+    # code = models.CharField(max_length=6, unique=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
     done = models.BooleanField(default=False)
 
@@ -115,10 +115,23 @@ class Quote(models.Model):
     insurance = models.BooleanField()
     packaging = models.BooleanField()
 
-    code = models.CharField(max_length=6, unique=True, null=True)
-    official_Code = models.CharField(max_length=300, unique=True)
+    # code = models.CharField(max_length=6, unique=True, null=True)
+    # official_Code = models.CharField(max_length=300, unique=True)
     date = models.DateTimeField(auto_now_add=True)
     done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'Order by {self.name} on time {self.date.strftime("%Y-%m-%d")}'
+        return f'Quote by {self.name} on time {self.date.strftime("%Y-%m-%d")}'
+
+
+class Contact(models.Model):
+    # branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
+    name = models.CharField(max_length=300)
+    phone_number = PhoneNumberField(null=False, blank=False)
+    email = models.EmailField()
+    message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    done = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'Contact by {self.name} on time {self.date.strftime("%Y-%m-%d")}'

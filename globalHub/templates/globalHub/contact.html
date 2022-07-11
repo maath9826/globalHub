@@ -38,9 +38,24 @@
           <textarea name="message" placeholder="Message" class="form-control" id="exampleFormControlTextarea1" rows="11"></textarea>
         </div>
       </div>
+      <div class="spinner-border text-warning d-none" role="status"></div>
       <button class="btn btn-secondary" type="submit">SUBMIT</button>
+      <div
+        id="contact-toast"
+        aria-live="assertive"
+        aria-atomic="true"
+        role="alert"
+        class="toast bg-success success-toast"
+        style="position: fixed; top: 10px; right: 10px"
+      >
+        <div class="toast-body">Quote has been created successfully</div>
+      </div>
     </form>
   </div>
+
+  {% block script %}
+  <script type="module" src="{% static 'globalHub/js/contact.js' %}"></script>
+  {% endblock script %} 
 {% endblock body %}
 
 

@@ -81,3 +81,24 @@
 --disabled: #bebbcb;
 
 --page-padding: 80px 267px; */
+
+/********* resposive *********/
+@media only screen and (max-width: 500px) {
+  #services_page .side_navbar,
+  #services_page .spacer {
+    display: none;
+  }
+
+  #services_page .services {
+    text-align: justify;
+    gap: 40px;
+  }
+
+  #services_page .services .service .title {
+    text-align: center;
+  }
+
+  #services_page .services img {
+    width: 100%;
+  }
+}

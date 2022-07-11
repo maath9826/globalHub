@@ -13,14 +13,31 @@ class OrderAdminSite(admin.ModelAdmin):
         'user_phone_number',
         'user_email',
         'order_info',
-        'official_code',
-        'code',
+        # 'official_code',
+        # 'code',
         'done'
     ]
     actions = ["Done"]
 
     list_display = ("user_name", "user_phone_number", "user_email", "order_info", "date", "done")
     list_filter = ("user_name", "done")
+
+    def Done(self, request, queryset):
+        queryset.update(code=None, done=True)
+        
+class Contact_View(admin.ModelAdmin):
+    model = Contact
+    fields = [
+        'name',
+        'phone_number',
+        'email',
+        'message',
+        'done'
+    ]
+    actions = ["Done"]
+
+    list_display = ("name", "phone_number", "email", "message", "date", "done")
+    list_filter = ("name", "done")
 
     def Done(self, request, queryset):
         queryset.update(code=None, done=True)
@@ -43,8 +60,8 @@ class Quote_View(admin.ModelAdmin):
         'expressDelivery',
         'insurance',
         'packaging',
-        'code',
-        'official_Code',
+        # 'code',
+        # 'official_Code',
         'done'
     ]
     list_display = ("name", "email", "phonenumber", "freightType", 'date', "done")
@@ -111,6 +128,7 @@ class Contact_view(admin.ModelAdmin):
 
 
 admin.site.register(Order, OrderAdminSite)
+admin.site.register(Contact, Contact_View)
 admin.site.register(Quote, Quote_View)
 admin.site.register(Service, Service_view)
 admin.site.register(Feedback, Feedback_View)

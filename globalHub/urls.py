@@ -11,6 +11,6 @@ urlpatterns = [
     path('services/<int:number>',views.services_parameter, name='services_parameter'),
     path('about',views.about, name='about'),
     path('offers',views.offers, name='offers'),
-    path("Home/saveQuote", views.Quote_save, name="saveQuote"),
-    path("Contact/saveContact", views.Contact_save, name="saveOrder")
+    path("quote/create", views.create_quote, name="create_quote"),
+    path("contact/create", views.create_contact, name="create_contact")
 ]
