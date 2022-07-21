@@ -1,4 +1,4 @@
-# CS50 WEB PROGRAMMING FINAL PROJECT: LOGISTIC SOLUTIONS WEBSITE
+# WEB50X FINAL PROJECT: LOGISTIC SOLUTIONS WEBSITE
 
 ## Main idea
 I created a website for a shipment company. The admin of the website can edit the content through the admin dashboard. The admin dashboard has been created using django jazzmin library. The main pages are:
