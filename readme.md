@@ -1,7 +1,5 @@
 # CS50 WEB PROGRAMMING FINAL PROJECT: NEXT CODER
 
-The project video is: https://youtu.be/YtHHEC-bdqA
-
 ## Main idea
 I created a website for a shipment company. The admin of the website can edit the content through the admin dashboard. The admin dashboard has been created using django jazzmin library. The main pages are:
 

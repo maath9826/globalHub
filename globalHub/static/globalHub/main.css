@@ -302,7 +302,7 @@ header nav {
 
 header nav .navbar-titles {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 50px;
   flex: 1;
